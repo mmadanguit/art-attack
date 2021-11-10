@@ -1,9 +1,14 @@
-# Sources:
-# https://sd2020spring.github.io/toolboxes/image-processing
-# https://github.com/Db1998/Facial-Distance
-
+"""
+Sources:
+https://sd2020spring.github.io/toolboxes/image-processing
+https://github.com/Db1998/Facial-Distance
+"""
+import serial_cmd
 import numpy as np
 import cv2
+
+# Instantiate serial command
+control = serial_cmd.Serial_cmd()
 
 # Instantiate face detector from OpenCV library
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
@@ -27,6 +32,9 @@ while True:
         # Displays facial distance
         font = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(frame, str(dst), (x, y-10), font, 1, (0, 50, 250), 1, cv2.LINE_AA)
+        # Sends facial distance to arduino
+        print(float(dst))
+        control.set_dist(float(dst))
 
     # Display the resulting frame
     cv2.imshow('frame', frame)
