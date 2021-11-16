@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.cfg
-python/art_attack_pkg_olin_college.egg-info/PKG-INFO
-python/art_attack_pkg_olin_college.egg-info/SOURCES.txt
-python/art_attack_pkg_olin_college.egg-info/dependency_links.txt
-python/art_attack_pkg_olin_college.egg-info/top_level.txt
