@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: art-attack-pkg-olin-college
 Version: 0.0.1
-Summary: A package to communicate with an Arduino to control multiple servos using the PCA9685 chip
+Summary: A package to communicate with an Arduino to control multiple servos using computer vision and the PCA9685 chip
 Home-page: https://github.com/mmadanguit/art-attack
 Author: Anna Commers, Elisa Dhanger, Jennifer Lee, Marion Madanguit, Luke Nonas-Hunter
 Author-email: lhunter@olin.edu
