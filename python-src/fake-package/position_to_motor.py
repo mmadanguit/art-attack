@@ -23,6 +23,18 @@ class Motor_control:
     def set_xy(self, x, y):
         self.x = x
         self.y = y
+        
+    def num_position(self, motor_num):
+        pos = str(self.motor_positions[motor_num])
+        if motor_num < 10:
+            motor_num = '0' + str(motor_num)
+        else:
+            motor_num = str(i)
+        if len(pos) == 1:
+            pos = '00' + pos
+        elif len(pos) == 2:
+            pos = '0' + pos
+        return(motor_num + pos)
 
     def wave_column():
         mod_iterator = 0
