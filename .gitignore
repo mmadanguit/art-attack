@@ -1,0 +1,8 @@
+# system files
+.venv/
+__pycache__
+.DS_Store
+# build
+build/
+dist/
+art_attack_pkg_olin_college.egg-info/
