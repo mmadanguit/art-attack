@@ -6,7 +6,7 @@ int servoPos;
 int facialDist = 0;
 
 String command = "";
-bool str2hex(char *str, uint16_t *val);
+bool hex2dec(char *str, uint16_t *val);
 
 
 
@@ -28,9 +28,9 @@ void loop() {
       command += ch;
     }
   }
-  
-  servoPos = map(facialDist, 0, 60, 0, 180); // Get servo position from facial distance
-  servo1.write(servoPos);
+
+//  servoPos = map(facialDist, 0, 60, 0, 180); // Get servo position from facial distance
+//  servo1.write(servoPos);
 }
 
 
@@ -42,7 +42,7 @@ void parse_command() {
     uint16_t val;
     if (command.startsWith("DIST!")) {
       Serial.print("Received");
-      if (str2hex(command.substring(5), &val)) { 
+      if (hex2dec(command.substring(5), &val)) { 
         Serial.println(val);
         facialDist = val;
       }
@@ -57,7 +57,7 @@ void parse_command() {
 ** no valid sequence of hex digits or if the sequence of hex digits does 
 ** not end with the end of the string.
 */
-bool str2hex(String str, uint16_t *val) {
+bool hex2dec(String str, uint16_t *val) {
   uint8_t pos = 0;
 
   if (str.length() == 0)

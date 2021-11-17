@@ -42,4 +42,4 @@ class Serial_cmd:
 
     def set_dist(self, val):
         if self.connected:
-            self.write('DIST!{:X}'.format(int(val)))
+            self.write('DIST!{:X}'.format(int(val))) # Hex format
