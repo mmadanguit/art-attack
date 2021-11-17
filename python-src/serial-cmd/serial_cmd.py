@@ -1,5 +1,3 @@
-"""Class that initializes serial communication to Arduino and has methods to read and write to Serial command"""
-
 import serial
 import serial.tools.list_ports as list_ports
 import string, array
@@ -9,7 +7,12 @@ class Serial_cmd:
                    (0x2A03, 0x0043), (0x2341, 0x0243),
                    (0x0403, 0x6001), (0x1A86, 0x7523))
 
+    SOM = "M"
+    EOM = "\r"
+
     def __init__(self, port = ''):
+        """Infrastructure for serial communication with the Arduino."""
+
         if port == '':
             self.dev = None
             self.connected = False
@@ -42,4 +45,6 @@ class Serial_cmd:
 
     def set_dist(self, val):
         if self.connected:
-            self.write('DIST!{:X}'.format(int(val))) # Hex format
+            byte_message = bytes(str(val), 'utf-8')
+            print(byte_message)
+            self.write('DIST!{:X}'.format(int(val))) # Format as hex string
