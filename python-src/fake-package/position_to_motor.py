@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import serialmotorlist
 
 
 class Motor_control:
@@ -34,7 +33,7 @@ class Motor_control:
             pos = '00' + pos
         elif len(pos) == 2:
             pos = '0' + pos
-        return(motor_num + pos)
+        return(motor_num, pos)
 
     def wave_column():
         mod_iterator = 0
