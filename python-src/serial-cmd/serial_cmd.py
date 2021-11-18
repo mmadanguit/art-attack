@@ -1,5 +1,3 @@
-"""Class that initializes serial communication to Arduino and has methods to read and write to Serial command"""
-
 import serial
 import serial.tools.list_ports as list_ports
 import string, array
@@ -10,6 +8,8 @@ class Serial_cmd:
                    (0x0403, 0x6001), (0x1A86, 0x7523))
 
     def __init__(self, port = ''):
+        """Infrastructure for serial communication with the Arduino."""
+
         if port == '':
             self.dev = None
             self.connected = False
@@ -32,14 +32,27 @@ class Serial_cmd:
                 self.dev = None
                 self.connected = False
 
-    def write(self, command):
-        if self.connected:
-            self.dev.write('{!s}\r'.format(command).encode())
-
     def read(self):
         if self.connected:
             return self.dev.readline().decode()
 
-    def set_dist(self, val):
+    def write(self, command):
+        """Sends data to the Arduino and waits for response.
+
+        Parameters:
+            command (str): command to be send over the Serial bus to the Arduino.
+        """
         if self.connected:
-            self.write('DIST!{:X}'.format(int(val))) # Hex format
+            self.dev.write(f'{command}\r'.encode())
+            print(self.read())
+
+    def set_servo(self, num, pos):
+        """Sets individual servo position.
+
+        Parameters:
+            num (str): the given servo number.
+            pos (str): the position to set the servo to.
+        """
+        if self.connected:
+            command = f'M{num}{pos}'
+            self.write(command)
