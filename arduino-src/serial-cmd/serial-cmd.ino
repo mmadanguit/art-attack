@@ -42,7 +42,9 @@ void parseCommand(String command) {
     Serial.print(servo_num); Serial.print(","); 
     Serial.print(servo_pos); Serial.print(","); 
     Serial.println("R"); // Send received message
-  }  
+  } else {
+    Serial.println("Error"); 
+  }
 }
 
 bool setServoPosition(uint8_t num, int pos) {

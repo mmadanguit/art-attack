@@ -61,7 +61,7 @@ while True:
             confidence = str(round(confidences[i], 2))
             color = colors[i]
             cv2.rectangle(image, (x,y), (x+w, y+h), color, 2)
-            cv2.putText(image, label + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
+            cv2.putText(image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
     # Display the resulting image
     cv2.imshow('Image', image)

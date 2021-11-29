@@ -16,8 +16,8 @@ else
     echo "Virtual environment activated."
 fi
 echo "Installing requirements..."
+pip install --upgrade pip
 python -m pip install -r requirements.txt
 echo "Installing symlinks to packages in python-src..."
 pip install -e $PWD
 echo "#####DONE#####"
-
