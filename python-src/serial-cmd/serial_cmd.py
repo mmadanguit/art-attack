@@ -43,8 +43,11 @@ class Serial_cmd:
             command (str): command to be send over the Serial bus to the Arduino.
         """
         if self.connected:
+            print('Called write')
             self.dev.write(f'{command}\r'.encode())
+            print(f'{command}\r'.encode())
             print(self.read())
+            return
 
     def set_servo(self, num, pos):
         """Sets individual servo position.
@@ -54,5 +57,14 @@ class Serial_cmd:
             pos (str): the position to set the servo to.
         """
         if self.connected:
+            print('Called set servo')
             command = f'M{num}{pos}'
+            print(command)
             self.write(command)
+
+if __name__ == '__main__':
+    control = Serial_cmd()
+
+    print("Hello")
+    control.set_servo('00','050')
+    print("Set servo to 50")
