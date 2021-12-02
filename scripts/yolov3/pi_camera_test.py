@@ -27,16 +27,17 @@ from picamera import PiCamera
 from PIL import Image
 
 # Create the in-memory stream
-stream = BytesIO()
+# stream = BytesIO()
 camera = PiCamera()
-camera.start_preview()
-sleep(2)
 
 while True:
+    camera.start_preview()
+    time.sleep(.05)
     # "Rewind" the stream to the beginning so we can read its content
     # stream.seek(0)
     camera.capture(stream, format='jpeg')
     image = Image.open(stream)
+    camer.stop_preview()
     image = np.array(image)
 #     image = cv2.imread(image)
     height, width, _ = image.shape
