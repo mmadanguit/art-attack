@@ -5,15 +5,15 @@ https://www.youtube.com/watch?v=1LCb1PVqzeY
 """
 import cv2
 import numpy as np
-import serial_cmd
-import motor_control
+# import serial_cmd
+# import motor_control
 import time
 
 # Instantiate serial command
-control = serial_cmd.Serial_cmd()
+# control = serial_cmd.Serial_cmd()
 
 # Instantiate motor control
-motor = motor_control.Motor_control()
+# motor = motor_control.Motor_control()
 
 # Load yolo weights and configuration files
 net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
