@@ -37,6 +37,7 @@ while True:
     # "Rewind" the stream to the beginning so we can read its content
     stream.seek(0)
     image = Image.open(stream)
+    image = np.array(image)
     height, width, _ = image.shape
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
