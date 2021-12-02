@@ -1,10 +1,10 @@
 import serial_cmd
-from motor import motor_control
+from motor import motor_ctrl
 import time
 
 control = serial_cmd.Serial_cmd()
 time.sleep(1.65)
-motor = motor_control.Motor_control()
+motor = motor_ctrl.Motor_ctrl()
 
 for i in range(0, 10):
     motor.motor_positions = [150] * 16

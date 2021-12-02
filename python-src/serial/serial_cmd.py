@@ -61,10 +61,3 @@ class Serial_cmd:
             command = f'M{num}{pos}'
             print(command)
             self.write(command)
-
-if __name__ == '__main__':
-    control = Serial_cmd()
-
-    print("Hello")
-    control.set_servo('00','050')
-    print("Set servo to 50")
