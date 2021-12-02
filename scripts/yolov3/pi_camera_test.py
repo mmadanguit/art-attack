@@ -31,14 +31,15 @@ stream = BytesIO()
 camera = PiCamera()
 
 while True:
-    camera.start_preview()
+#     camera.start_preview()
     time.sleep(.05)
     # "Rewind" the stream to the beginning so we can read its content
     # stream.seek(0)
     camera.capture(stream, format='jpeg')
     image = Image.open(stream)
-    camera.stop_preview()
+#     camera.stop_preview()
     image = np.array(image)
+    print("new image")
     print(image)
 #     image = cv2.imread(image)
     height, width, _ = image.shape
@@ -98,9 +99,9 @@ while True:
             cv2.putText(image, label + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
     # Display the resulting image
-    cv2.imshow('Image', image)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+#     cv2.imshow('Image', image)
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
 
 # When everything is done, release the capture
 cap.release()
