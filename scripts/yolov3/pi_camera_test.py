@@ -31,11 +31,11 @@ stream = BytesIO()
 camera = PiCamera()
 camera.start_preview()
 sleep(2)
-camera.capture(stream, format='jpeg')
 
 while True:
     # "Rewind" the stream to the beginning so we can read its content
     # stream.seek(0)
+    camera.capture(stream, format='jpeg')
     image = Image.open(stream)
     image = np.array(image)
     height, width, _ = image.shape
