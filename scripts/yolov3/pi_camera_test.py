@@ -37,7 +37,7 @@ while True:
     # stream.seek(0)
     camera.capture(stream, format='jpeg')
     image = Image.open(stream)
-    camer.stop_preview()
+    camera.stop_preview()
     image = np.array(image)
 #     image = cv2.imread(image)
     height, width, _ = image.shape
