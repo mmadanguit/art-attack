@@ -27,7 +27,7 @@ from picamera import PiCamera
 from PIL import Image
 
 # Create the in-memory stream
-# stream = BytesIO()
+stream = BytesIO()
 camera = PiCamera()
 
 while True:
