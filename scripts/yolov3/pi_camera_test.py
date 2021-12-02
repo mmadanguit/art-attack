@@ -6,20 +6,43 @@ https://www.youtube.com/watch?v=1LCb1PVqzeY
 import cv2
 import numpy as np
 # import serial_cmd
+# import motor_control
+import time
 
 # Instantiate serial command
 # control = serial_cmd.Serial_cmd()
 
+# Instantiate motor control
+# motor = motor_control.Motor_control()
+
 # Load yolo weights and configuration files
 net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
 
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
+# ret,frame = cap.read() # return a single frame in variable `frame`
+
+from io import BytesIO
+from time import sleep
+from picamera import PiCamera
+from PIL import Image
+
+# Create the in-memory stream
+# stream = BytesIO()
+camera = PiCamera()
 
 while True:
-    # Capture frame-by-frame
-    _, image = cap.read()
-    height, width, _ = image.shape
+#     camera.start_preview()
+    time.sleep(.01)
+    # "Rewind" the stream to the beginning so we can read its content
+    # stream.seek(0)
+    camera.capture('test2.jpeg')
+#     image = Image.open(stream)
+#     camera.stop_preview()
+#     image = np.array(image)
+    image = cv2.imread('test2.jpeg')
+    print("new image")
     print(image[0, 0, 0])
+    height, width, _ = image.shape
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
     net.setInput(blob)
@@ -45,6 +68,17 @@ while True:
                 x = int(center_x - w/2)
                 y = int(center_y - h/2)
 
+                print(x, y)
+                motor.set_xy(x, y)
+                motor.motor_target()
+                print(motor.target_motor)
+                motor.wave_column()
+                for i in range(motor.num_motors):
+                    print(motor.num_position(i))
+                    num, pos = motor.num_position(i)
+                    control.set_servo(num, pos)
+                time.sleep(.05)
+
                 boxes.append([x, y, w, h])
                 confidences.append((float(confidence)))
                 class_ids.append(class_id)
@@ -62,7 +96,7 @@ while True:
             confidence = str(round(confidences[i], 2))
             color = colors[i]
             cv2.rectangle(image, (x,y), (x+w, y+h), color, 2)
-            cv2.putText(image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
+            cv2.putText(image, label + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
     # Display the resulting image
 #     cv2.imshow('Image', image)
