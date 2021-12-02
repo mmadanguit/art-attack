@@ -37,8 +37,8 @@ while True:
     # stream.seek(0)
     camera.capture(stream, format='jpeg')
     image = Image.open(stream)
-#     image = np.array(image)
-    image = cv2.imread(image)
+    image = np.array(image)
+#     image = cv2.imread(image)
     height, width, _ = image.shape
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
