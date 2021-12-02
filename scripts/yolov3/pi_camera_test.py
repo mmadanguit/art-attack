@@ -35,7 +35,7 @@ camera.capture(stream, format='jpeg')
 
 while True:
     # "Rewind" the stream to the beginning so we can read its content
-    stream.seek(0)
+    # stream.seek(0)
     image = Image.open(stream)
     image = np.array(image)
     height, width, _ = image.shape
