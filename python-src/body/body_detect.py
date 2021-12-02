@@ -26,6 +26,8 @@ class Body_detect:
         cap = cv2.VideoCapture(0)
         _, self.image = cap.read()
 
+        print("Image captured")
+
     def find_bodies(self):
         """Identifies bodies in image using yolo model.
 
@@ -70,6 +72,7 @@ class Body_detect:
                 x, y, w, h = self.boxes[i]
                 bodies.append([x, y])
 
+        print(bodies)
         return bodies
 
     def visualize(self):
