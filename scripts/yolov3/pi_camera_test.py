@@ -32,7 +32,7 @@ camera = PiCamera()
 
 while True:
 #     camera.start_preview()
-    time.sleep(.05)
+    time.sleep(.01)
     # "Rewind" the stream to the beginning so we can read its content
     # stream.seek(0)
     camera.capture(stream, format='jpeg')
@@ -76,7 +76,7 @@ while True:
                     print(motor.num_position(i))
                     num, pos = motor.num_position(i)
                     control.set_servo(num, pos)
-                time.sleep(.5)
+                time.sleep(.05)
 
                 boxes.append([x, y, w, h])
                 confidences.append((float(confidence)))
