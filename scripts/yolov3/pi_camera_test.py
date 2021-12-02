@@ -27,7 +27,7 @@ from picamera import PiCamera
 from PIL import Image
 
 # Create the in-memory stream
-stream = BytesIO()
+# stream = BytesIO()
 camera = PiCamera()
 
 while True:
@@ -35,13 +35,13 @@ while True:
     time.sleep(.01)
     # "Rewind" the stream to the beginning so we can read its content
     # stream.seek(0)
-    camera.capture(stream, format='jpeg')
-    image = Image.open(stream)
+    camera.capture('test2.jpeg')
+#     image = Image.open(stream)
 #     camera.stop_preview()
-    image = np.array(image)
+#     image = np.array(image)
+    image = cv2.imread('test2.jpeg')
     print("new image")
     print(image[0, 0, 0])
-#     image = cv2.imread(image)
     height, width, _ = image.shape
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
