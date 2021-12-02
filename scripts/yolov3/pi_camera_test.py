@@ -33,22 +33,10 @@ camera.start_preview()
 sleep(2)
 camera.capture(stream, format='jpeg')
 
-
-while(True):
+while True:
     # "Rewind" the stream to the beginning so we can read its content
     stream.seek(0)
     image = Image.open(stream)
-    cv2.imshow('img1',image) #display the captured image
-    if cv2.waitKey(1) & 0xFF == ord('y'): #save on pressing 'y' 
-        cv2.imwrite('images/c1.png',frame)
-        cv2.destroyAllWindows()
-        break
-
-cap.release()
-
-while True:
-    # Capture frame-by-frame
-    _, image = cap.read()
     height, width, _ = image.shape
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
