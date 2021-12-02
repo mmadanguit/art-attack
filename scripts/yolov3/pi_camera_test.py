@@ -39,7 +39,8 @@ while True:
     image = Image.open(stream)
 #     camera.stop_preview()
     image = np.array(image)
-    print(image[0])
+    print("new image")
+    print(image[0, 0, 0])
 #     image = cv2.imread(image)
     height, width, _ = image.shape
 
