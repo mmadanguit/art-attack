@@ -13,6 +13,7 @@ cap = cv2.VideoCapture(0)
 
 while True:
     image = vs.read()
+    print("New image")
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
     net.setInput(blob)
