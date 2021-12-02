@@ -19,6 +19,7 @@ while True:
     # Capture frame-by-frame
     _, image = cap.read()
     height, width, _ = image.shape
+    print(image[0, 0, 0])
 
     blob = cv2.dnn.blobFromImage(image, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
     net.setInput(blob)
@@ -64,9 +65,9 @@ while True:
             cv2.putText(image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
     # Display the resulting image
-    cv2.imshow('Image', image)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+#     cv2.imshow('Image', image)
+#     if cv2.waitKey(1) & 0xFF == ord('q'):
+#         break
 
 # When everything is done, release the capture
 cap.release()
