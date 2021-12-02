@@ -1,9 +1,10 @@
-import stream
+from imutils.video import WebcamVideoStream
+import imutils
 import cv2
 import numpy as np
 
 net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
-vs = stream.WebcamVideoStream().start()
+vs = WebcamVideoStream().start()
 
 # Load yolo weights and configuration files
 net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
