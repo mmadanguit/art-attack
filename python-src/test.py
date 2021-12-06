@@ -1,5 +1,5 @@
 import serial_cmd
-from motor import motor_ctrl
+import motor_ctrl
 import time
 
 control = serial_cmd.Serial_cmd()
