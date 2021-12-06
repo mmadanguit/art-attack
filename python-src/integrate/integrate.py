@@ -23,6 +23,7 @@ while True:
         motor.set_xy(xy[0], xy[1])
 
         # Use follow method to position motors in front of body
+        motor.motor_target()
         motor.follow()
 
         # Set each servo
