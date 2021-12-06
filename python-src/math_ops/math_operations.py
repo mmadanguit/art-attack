@@ -15,4 +15,4 @@ class MathOperations:
         Returns:
             (int): x plus y.
         """
-        return x+y
+        return self.x+self.y
