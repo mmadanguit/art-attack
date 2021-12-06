@@ -89,5 +89,14 @@ class Body_detect:
                 cv2.rectangle(self.image, (x,y), (x+w, y+h), color, 2)
                 cv2.putText(self.image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
-        cv2.imwrite('output.jpg', self.image)
+        # cv2.imwrite('output.jpg', self.image)
+        cv2.imshow('Image', self.image)
+        cv2.waitKey(0)
         print("Image saved")
+
+    def reset(self):
+        """Clear lists that contain boxes, confidences, and indexes."""
+
+        self.boxes = []
+        self.confidences = []
+        self.indexes = []
