@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-import serial_cmd
-import body_detect
-import motor_ctrl
+from serial import serial_cmd
+from body import body_detect
+from motor import motor_ctrl
 
 # Instantiate serial command
 control = serial_cmd.Serial_cmd()
