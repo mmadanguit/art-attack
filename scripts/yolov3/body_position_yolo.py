@@ -65,9 +65,9 @@ while True:
             cv2.putText(image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
 
     # Display the resulting image
-#     cv2.imshow('Image', image)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
+    cv2.imshow('Image', image)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
 # When everything is done, release the capture
 cap.release()
