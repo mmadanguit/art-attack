@@ -1,11 +1,14 @@
 import cv2
 import numpy as np
-import serial
-import body
-import motor
+import time
+import serial.serial_cmd as serial_cmd
+import body.body_detect as body_detect
+import motor.motor_ctrl as motor_ctrl
 
 # Instantiate serial command
 control = serial_cmd.Serial_cmd()
+
+time.sleep(1.65)
 
 # Instantiate motor control
 motor = motor_ctrl.Motor_ctrl()
@@ -16,7 +19,12 @@ body = body_detect.Body_detect()
 while True:
     # Find body position from camera feed
     body.capture()
-    print(body.find_bodies())
+
+    # Display the resulting image
+    cv2.imshow('Image', body.image)
+
+    body.find_bodies()
+
     if len(body.find_bodies()) > 0:
         xy = body.find_bodies()[0]
         print("bodies", xy)
@@ -30,6 +38,10 @@ while True:
         
         # Set each servo
         for i in range(motor.num_motors):
-            print(motor.num_position(i))
+            #print(motor.num_position(i))
             num, pos = motor.num_position(i)
             control.set_servo(num, pos)
+        
+
+        body.reset()
+        time.sleep(1)
