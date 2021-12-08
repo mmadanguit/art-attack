@@ -21,12 +21,9 @@ class Body_detect:
 
         print('Instantiated body detection class')
 
-    def capture(self):
-        """Sets image to frame from camera."""
-        cap = cv2.VideoCapture(0)
-        _, self.image = cap.read()
-
-        print("Image captured")
+    def set_image(self, frame):
+        """Sets image to input frame."""
+        self.image = frame
 
     def find_bodies(self):
         """Identifies bodies in image using yolo model.
@@ -34,6 +31,7 @@ class Body_detect:
         Returns:
             (list): contains the coordinates of each detected body
         """
+        self.reset()
 
         # Format image
         height, width, _ = self.image.shape
@@ -65,34 +63,15 @@ class Body_detect:
         # Apply non-maxima suppression to filter the bounding boxes
         self.indexes = cv2.dnn.NMSBoxes(self.boxes, self.confidences, 0.5, 0.4)
 
-        # Extract coordinates of each body's bounding box
+        # Extract coordinates of each body's bounding box and visualize box
         bodies = []
         if len(self.indexes) > 0:
             for i in self.indexes.flatten():
                 x, y, w, h = self.boxes[i]
                 bodies.append([x, y])
+                cv2.rectangle(self.image, (x,y), (x+w, y+h), (255,0,0), 2)
 
-        print(bodies)
-        return bodies
-
-    def visualize(self):
-        """Visualizes bounding boxes and saves the resulting image."""
-
-        font = cv2.FONT_HERSHEY_PLAIN
-        colors = np.random.uniform(0, 255, size=(len(self.boxes), 3))
-        if len(self.indexes) > 0:
-            for i in self.indexes.flatten():
-                x, y, w, h = self.boxes[i]
-                label = "person"
-                confidence = str(round(self.confidences[i], 2))
-                color = colors[i]
-                cv2.rectangle(self.image, (x,y), (x+w, y+h), color, 2)
-                cv2.putText(self.image, str(x) + " " + str(y) + " " + confidence, (x, y+20), font, 2, (255, 255, 255), 2)
-
-        # cv2.imwrite('output.jpg', self.image)
-        cv2.imshow('Image', self.image)
-        cv2.waitKey(0)
-        print("Image saved")
+        return bodies, self.image
 
     def reset(self):
         """Clear lists that contain boxes, confidences, and indexes."""

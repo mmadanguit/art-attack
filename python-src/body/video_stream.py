@@ -6,11 +6,11 @@ Sources:
 from threading import Thread
 import cv2
 
-class WebcamVideoStream:
+class Video_stream:
 
-    def __init__(self, src=0):
+    def __init__(self):
     	# Initializes the video camera stream and read the first frame from the stream
-    	self.stream = cv2.VideoCapture(src)
+    	self.stream = cv2.VideoCapture(0)
     	(self.grabbed, self.frame) = self.stream.read()
     	# Initializes the variable used to indicate if the thread should be stopped
     	self.stopped = False
