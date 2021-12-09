@@ -6,14 +6,16 @@ Sources:
 
 import cv2
 import numpy as np
+import os
 
 class Body_detect:
 
     def __init__(self):
         """Infrastructure for body detection using yolov3."""
 
-        self.net = cv2.dnn.readNet('yolov3-tiny.weights', 'yolov3-tiny.cfg')
-        self.image = cv2.imread('test.jpg')
+        self.CLASS_FOLDER = os.path.dirname(__file__)
+        self.net = cv2.dnn.readNet(self.CLASS_FOLDER + '/yolov3-tiny.weights', self.CLASS_FOLDER + '/yolov3-tiny.cfg')
+        self.image = cv2.imread(self.CLASS_FOLDER + '/test.jpg')
 
         self.boxes = []
         self.confidences = []
