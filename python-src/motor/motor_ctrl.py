@@ -1,6 +1,3 @@
-import cv2
-import numpy as np
-
 class Motor_ctrl:
 
     def __init__(self):
@@ -29,8 +26,8 @@ class Motor_ctrl:
             x (int): x-coordinate of target person.
             y (int): y-coordinate of target person.
         """
-        self.x = x
-        self.y = y
+        self.x = abs(self.x_max - x)
+        self.y = abs(self.y_max - y)
 
     def num_position(self, motor_num):
         """String formats the motor number and its position.
@@ -78,9 +75,6 @@ class Motor_ctrl:
         for i in range(self.num_motors):
             if i % self.num_columns == self.column:
                 if self.row * self.num_rows <= i < (self.row + 1) * self.num_rows:
-                    print(self.column)
-                    print(self.row)
-                    print(i)
                     self.target_motor = i
 
     def follow(self):
@@ -113,7 +107,11 @@ class Motor_ctrl:
             mod_iterator += 1 # Iterate movement to the next column
 
     def column_follow(self):
-        pass
+        for i in range(self.num_motors):
+            if i % 4 == self.target_motor % 4:
+                self.motor_positions[i] = 170
+            else:
+                self.motor_positions[i] = 0
 
     def chaos(self, x, y):
         pass
