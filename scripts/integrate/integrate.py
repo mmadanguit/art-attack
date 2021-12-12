@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 import imutils
-import serial.serial_cmd as serial_cmd
+import comms.serial_cmd as serial_cmd
 import body.body_detect as body_detect
 import motor.motor_ctrl as motor_ctrl
 import body.video_stream as video_stream
