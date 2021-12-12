@@ -20,6 +20,8 @@ vs = video_stream.Video_stream().start()
 # Instantiate body detection
 body = body_detect.Body_detect()
 
+mod_iterator = 0
+
 while True:
     # Grab the frame from the threaded video stream and resize it
 	# to have a maximum width of 400 pixels
@@ -32,6 +34,15 @@ while True:
     # Display the resulting image
     cv2.imshow('Frame', frame)
     key = cv2.waitKey(1) & 0xFF
+
+    motor.wave_column(mod_iterator)
+    mod_iterator += 1
+    # Set each servo
+    for i in range(motor.num_motors):
+        num, pos = motor.num_position(i)
+        control.set_servo(num, pos)
+    
+    time.sleep(0.1)
 
     if len(coord) > 0:
         coord = coord[0]
