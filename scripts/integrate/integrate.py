@@ -24,7 +24,7 @@ mod_iterator = 0
 
 while True:
     # Grab the frame from the threaded video stream and resize it
-	# to have a maximum width of 400 pixels
+    # to have a maximum width of 400 pixels
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
 
@@ -35,15 +35,7 @@ while True:
     cv2.imshow('Frame', frame)
     key = cv2.waitKey(1) & 0xFF
 
-    motor.wave_column(mod_iterator)
-    mod_iterator += 1
-    # Set each servo
-    for i in range(motor.num_motors):
-        num, pos = motor.num_position(i)
-        control.set_servo(num, pos)
-    
-    time.sleep(0.1)
-
+    # If a body is found, make the motors stick out in a column in front of the person
     if len(coord) > 0:
         coord = coord[0]
         print("bodies", coord)
@@ -61,3 +53,14 @@ while True:
             control.set_servo(num, pos)
 
         time.sleep(.05)
+	
+    # If a body is not found, move the motors in a wave
+    else:
+        motor.wave_column(mod_iterator)
+        mod_iterator += 1
+        # Set each servo
+        for i in range(motor.num_motors):
+            num, pos = motor.num_position(i)
+            control.set_servo(num, pos)
+        
+        time.sleep(0.1)
