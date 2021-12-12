@@ -46,14 +46,14 @@ while True:
         # Use follow method to position motors in front of body
         motor.motor_target()
         motor.column_follow()
-        
+
         # Set each servo
         for i in range(motor.num_motors):
             num, pos = motor.num_position(i)
             control.set_servo(num, pos)
 
-        time.sleep(.05)
-	
+        time.sleep(0.05)
+
     # If a body is not found, move the motors in a wave
     else:
         motor.wave_column(mod_iterator)
@@ -62,5 +62,5 @@ while True:
         for i in range(motor.num_motors):
             num, pos = motor.num_position(i)
             control.set_servo(num, pos)
-        
-        time.sleep(0.1)
+
+        time.sleep(0.05)
