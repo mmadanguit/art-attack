@@ -1,3 +1,6 @@
+import cv2
+import numpy as np
+
 class Motor_ctrl:
 
     def __init__(self):
@@ -80,33 +83,33 @@ class Motor_ctrl:
     def follow(self):
         """Sets the target and its surrounding motors to stick out."""
         self.motor_positions = [0] * self.num_motors
-        self.motor_positions[self.target_motor] = 180
+        self.motor_positions[self.target_motor] = 170
         if self.target_motor < 12:
-            self.motor_positions[self.target_motor + self.num_columns] = 90
+            self.motor_positions[self.target_motor + self.num_columns] = 60
         if self.target_motor > 3:
-            self.motor_positions[self.target_motor - self.num_columns] = 90
+            self.motor_positions[self.target_motor - self.num_columns] = 60
         if self.target_motor % self.num_columns != 0:
-            self.motor_positions[self.target_motor - 1] = 90
+            self.motor_positions[self.target_motor - 1] = 60
         if self.target_motor % self.num_columns != 3:
-            self.motor_positions[self.target_motor + 1] = 90
+            self.motor_positions[self.target_motor + 1] = 60
 
-    def wave_column(self):
-        """Insert description of movement here."""
-        mod_iterator = 0
-        while mod_iterator < 20:
-            for i in range(self.num_motors):
-                if i % self.num_columns == mod_iterator % self.num_columns:
-                    self.motor_positions[i] = 180
-                if i % self.num_columns == (mod_iterator + 1) % self.num_columns:
-                    self.motor_positions[i] = 90
-                if i % self.num_columns == (mod_iterator + 2) % self.num_columns:
-                    self.motor_positions[i] = 0
-                if i % self.num_columns == (mod_iterator + 3) % self.num_columns:
-                    self.motor_positions[i] = 90
-            print(self.motor_positions)
-            mod_iterator += 1 # Iterate movement to the next column
+    def wave_column(self, mod_iterator):
+        """Move the motors in a wave motion by changing the mod_iterator input.
+        Parameters:
+            mod_iterator (int): selects the column of the sculpture to stick out.
+        """
+        for i in range(self.num_motors):
+            if i % self.num_columns == mod_iterator % self.num_columns:
+                self.motor_positions[i] = 170
+            if i % self.num_columns == (mod_iterator + 1) % self.num_columns:
+                self.motor_positions[i] = 60
+            if i % self.num_columns == (mod_iterator + 2) % self.num_columns:
+                self.motor_positions[i] = 0
+            if i % self.num_columns == (mod_iterator + 3) % self.num_columns:
+                self.motor_positions[i] = 60
 
     def column_follow(self):
+        """Make the column of motors in front of the person stick out."""
         for i in range(self.num_motors):
             if i % 4 == self.target_motor % 4:
                 self.motor_positions[i] = 170
