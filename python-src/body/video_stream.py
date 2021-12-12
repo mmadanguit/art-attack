@@ -12,6 +12,7 @@ class Video_stream:
     	# Initializes the video camera stream and read the first frame from the stream
     	self.stream = cv2.VideoCapture(0)
     	(self.grabbed, self.frame) = self.stream.read()
+        
     	# Initializes the variable used to indicate if the thread should be stopped
     	self.stopped = False
 
