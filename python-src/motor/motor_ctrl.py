@@ -115,6 +115,3 @@ class Motor_ctrl:
                 self.motor_positions[i] = 170
             else:
                 self.motor_positions[i] = 0
-
-    def chaos(self, x, y):
-        pass
