@@ -1,7 +1,7 @@
 baseURL = "https://demos.julien-maury.dev/hugo-theme-ava/"
 languageCode = "en"
 title = "Hugo Ava Theme"
-theme = "hugo-theme-ava"
+theme = "hugo-themes-ava"
 paginate = 7
 mainSections = "post"
 publishDir = "../docs"
