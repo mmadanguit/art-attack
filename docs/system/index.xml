@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System on Tri Wall</title>
+    <link>https://mmadanguit.github.io/art-attack/system/</link>
+    <description>Recent content in System on Tri Wall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://mmadanguit.github.io/art-attack/system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Electrical Subsystem</title>
+      <link>https://mmadanguit.github.io/art-attack/system/electrical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/electrical/</guid>
+      <description>The responsibilities of the electrical subsystem can be boiled down into one mission statement: provide a way for the software to control the motors in our deliverable.
+To accomplish this task, the electrical subsystem is broken up into the following parts:
+Interfacing with the Computer To interface with the computer we decided to use an arduino because it allowed for easy serial communication with the computer over USB. The firmware/software team wrote the code that defined how the information sent over the bus would be structured, when devices could talk, and how to catch errors that occur when sending data over the bus.</description>
+    </item>
+    
+    <item>
+      <title>Mechanical Subsystem</title>
+      <link>https://mmadanguit.github.io/art-attack/system/mechanical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/mechanical/</guid>
+      <description>Scotch Yokes We designed and manufactured 16 scotch yokes to translate the rotational motion from the server motors into linear motion
+To begin designing the scotch yoke systems we researched the different forms they usually came in. These were some of the inspiration photos that helped the most in then designing our scotch yoke system:
+After looking at many reference photos we gathered that there were a few important factors that go into a scotch yoke system:</description>
+    </item>
+    
+    <item>
+      <title>Software and Firmware Subsystems</title>
+      <link>https://mmadanguit.github.io/art-attack/system/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/software/</guid>
+      <description>Python Classes Our python package to control our interactive sculpture consists of three classes. The first class uses camera data to track and report the position of people in front of the sculpture. The second class translates that body position into a position for each motor. The last class takes the position of each motor and facilitates serial communication to the Arduino.
+Body Detection The body detection class handles person detection from the camera’s raw video feed.</description>
+    </item>
+    
+  </channel>
+</rss>

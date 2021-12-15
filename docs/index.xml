@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tri-Wall on Tri Wall</title>
+    <link>https://mmadanguit.github.io/art-attack/</link>
+    <description>Recent content in Tri-Wall on Tri Wall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://mmadanguit.github.io/art-attack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://mmadanguit.github.io/art-attack/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/about/</guid>
+      <description>Who are we? We&amp;rsquo;re a team of five students studying at Olin College of Engineering! Our team members are Jennifer Lee, Elisa Dhanger, Luke Nonas-Hunter, Anna Commers, and Marion Madnaguit.
+Special thanks to the PIE teaching team for supporting us throughout this project and this semester.</description>
+    </item>
+    
+    <item>
+      <title>Budget</title>
+      <link>https://mmadanguit.github.io/art-attack/process/budget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/process/budget/</guid>
+      <description>Budget Breakdown When planning our deliverable we decided that we wanted to create the largest sculpture that we could make. We determined the two biggest blockers that we were going to run into were time and budget. To overcome the issue of budget we spent a lot of time figuring out the most cost effective components and implementations for each subsystem before purchasing anything for the project. This can be seen in our budget spreadsheet.</description>
+    </item>
+    
+    <item>
+      <title>Electrical Subsystem</title>
+      <link>https://mmadanguit.github.io/art-attack/system/electrical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/electrical/</guid>
+      <description>The responsibilities of the electrical subsystem can be boiled down into one mission statement: provide a way for the software to control the motors in our deliverable.
+To accomplish this task, the electrical subsystem is broken up into the following parts:
+Interfacing with the Computer To interface with the computer we decided to use an arduino because it allowed for easy serial communication with the computer over USB. The firmware/software team wrote the code that defined how the information sent over the bus would be structured, when devices could talk, and how to catch errors that occur when sending data over the bus.</description>
+    </item>
+    
+    <item>
+      <title>Mechanical Subsystem</title>
+      <link>https://mmadanguit.github.io/art-attack/system/mechanical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/mechanical/</guid>
+      <description>Scotch Yokes We designed and manufactured 16 scotch yokes to translate the rotational motion from the server motors into linear motion
+To begin designing the scotch yoke systems we researched the different forms they usually came in. These were some of the inspiration photos that helped the most in then designing our scotch yoke system:
+After looking at many reference photos we gathered that there were a few important factors that go into a scotch yoke system:</description>
+    </item>
+    
+    <item>
+      <title>Software and Firmware Subsystems</title>
+      <link>https://mmadanguit.github.io/art-attack/system/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/system/software/</guid>
+      <description>Python Classes Our python package to control our interactive sculpture consists of three classes. The first class uses camera data to track and report the position of people in front of the sculpture. The second class translates that body position into a position for each motor. The last class takes the position of each motor and facilitates serial communication to the Arduino.
+Body Detection The body detection class handles person detection from the camera’s raw video feed.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 1</title>
+      <link>https://mmadanguit.github.io/art-attack/process/sprint1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/process/sprint1/</guid>
+      <description>Project Goals Our team came together with a desire to see more art at Olin and create something cool and creative. This gave rise to our overarching project goal, which was to create a large-scale, impactful installation that has a well integrated system capable of generating engaging patterns of movement. We wanted to create something that could excite and last within the Olin community, and found inspiration in sculptures that change and respond to the presence of a person.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 2</title>
+      <link>https://mmadanguit.github.io/art-attack/process/sprint2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/process/sprint2/</guid>
+      <description>We spent our second sprint working on building out the wall to a 1x1 meter grid.
+Mechanical Our mechanical team made the decision to 3D print and laser cut all the parts, and worked on optimizing the printer settings to print as many parts as possible in shorter time.
+Electrical Our electrical team worked on an arduino board mount to fit and control all 3 servo controllers. They also created wires and a system for wire management.</description>
+    </item>
+    
+    <item>
+      <title>Sprint 3</title>
+      <link>https://mmadanguit.github.io/art-attack/process/sprint3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mmadanguit.github.io/art-attack/process/sprint3/</guid>
+      <description>If sprints had catch phrases, Sprint 3’s catch phrase would be “quit while you’re ahead”. In this sprint we decided to reevaluate our final deliverable and scale back where we could. At this point, we had poured almost 48 hours into the crochet alone and it was clear that if we were going to make the full 1x3 meter sculpture we were hoping to make, we would have to treat this project like a 9-5 job until it was due which wasn’t going to be possible with everyone’s busy schedules.</description>
+    </item>
+    
+  </channel>
+</rss>
