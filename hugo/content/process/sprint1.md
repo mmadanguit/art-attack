@@ -1,7 +1,7 @@
 ---
 title: 'Sprint 1'
 description: Starting up and setting out. 
-image: './../images/textile.jpeg'
+image: '../../images/textile.jpeg'
 ---
 
 # Project Goals
