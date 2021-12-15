@@ -1,7 +1,7 @@
 ---
 title: 'Sprint 3'
 description: Quitting while we're ahead.
-image: '../images/textile.jpeg'
+image: '../../images/textile.jpeg'
 ---
 
 If sprints had catch phrases, Sprint 3’s catch phrase would be “quit while you’re ahead”. In this sprint we decided to reevaluate our final deliverable and scale back where we could. At this point, we had poured almost 48 hours into the crochet alone and it was clear that if we were going to make the full 1x3 meter sculpture we were hoping to make, we would have to treat this project like a 9-5 job until it was due which wasn’t going to be possible with everyone’s busy schedules. Instead we decided to dedicate our efforts to polishing the MVP we had created for Sprint 2.
