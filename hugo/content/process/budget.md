@@ -1,6 +1,5 @@
 ---
 title: 'Budget'
-<<<<<<< HEAD
 description: Learn how we used $250 to build our wall. 
 image: '../images/textile.jpeg'
 ---
