@@ -1,7 +1,7 @@
 ---
 title: 'Electrical Subsystem'
 description: Learn more about how we powered all 16 of our servos.  
-image: '../../images/textile.jpeg'
+image: './../images/textile.jpeg'
 ---
 
 The responsibilities of the electrical subsystem can be boiled down into one mission statement: provide a way for the software to control the motors in our deliverable.
