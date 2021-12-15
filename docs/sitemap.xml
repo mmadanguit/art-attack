@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/about/</loc>
+    <loc>./about/</loc>
   </url><url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/</loc>
+    <loc>./process/budget/</loc>
   </url><url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/categories/</loc>
+    <loc>./categories/</loc>
   </url><url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/process/</loc>
+    <loc>./system/electrical/</loc>
   </url><url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/system/</loc>
+    <loc>./system/mechanical/</loc>
   </url><url>
-    <loc>https://demos.julien-maury.dev/hugo-theme-ava/tags/</loc>
+    <loc>./process/</loc>
+  </url><url>
+    <loc>./system/software/</loc>
+  </url><url>
+    <loc>./process/sprint1/</loc>
+  </url><url>
+    <loc>./process/sprint2/</loc>
+  </url><url>
+    <loc>./process/sprint3/</loc>
+  </url><url>
+    <loc>./system/</loc>
+  </url><url>
+    <loc>./tags/</loc>
+  </url><url>
+    <loc>./</loc>
   </url>
 </urlset>
