@@ -1,7 +1,7 @@
 ---
 title: 'Software and Firmware Subsystems'
 description: Learn more about our python package and how we interfaced between Python and Arduino. 
-image: './images/textile.jpeg'
+image: './../images/textile.jpeg'
 ---
 
 ## Python Classes
