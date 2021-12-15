@@ -4,6 +4,7 @@ title = "Hugo Ava Theme"
 theme = "hugo-themes-ava"
 paginate = 7
 mainSections = "post"
+publishDir = "../docs"
 
 [languages]
   [languages.en]
