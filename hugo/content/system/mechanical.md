@@ -1,5 +1,6 @@
 ---
-title: 'Mechanical'
+title: 'Mechanical Subsystem'
+description: Learn more about our scotch yoke system and crochet textile. 
 ---
 ## Scotch yokes
 

@@ -2,5 +2,5 @@
 title: 'System'
 image: './images/wall.jpg'
 ---
-Overview of system
+# Overview of System
 ![](/images/systemdiagram.png)
