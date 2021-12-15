@@ -1,6 +1,7 @@
 ---
 title: 'Mechanical Subsystem'
-description: Learn more about our scotch yoke system and crochet textile. 
+description: Learn more about our scotch yoke system and crochet textile.
+image: './images/wall2.png'
 ---
 ## Scotch yokes
 
