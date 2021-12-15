@@ -1,4 +1,6 @@
 ---
-title: 'System Design'
-description: Learn more about how the sculpture works.
+title: 'System'
+image: './images/wall.jpg'
 ---
+# Overview of System
+![](/images/systemdiagram.png)
