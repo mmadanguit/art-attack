@@ -22,7 +22,7 @@ canonifyURLs = true
 [params]
   ga_id=""
   mainSections = ["post"]
-
+  css = ["css/custom.css"]
 
   [params.meta_tags]
     meta_description = "Ava is a light theme for your blog with essential features you might dig in."
