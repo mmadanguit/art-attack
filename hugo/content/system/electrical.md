@@ -18,16 +18,17 @@ To generate the 50 PWM signals we need to control the 50 motors in the sculpture
 The resistors are chosen for the I2C bus affect its power efficiency and speed. An increase in resistor size will result in better power efficiency but will cause the bus to be slower. This is because the resistor affects the bus's ability to go from a low signal to a high signal. Since we are not constrained by power, we will opt for the minimum resistor value.
 
 To find the minimum resistor that can be used by the bus, we can use this formula:
-$$R_{min}=\frac{V_{CC}-V_{OL}}{I_{OL}}$$
 
-In our case, $V_{CC}=5V$, $V_{OL}=1.5V$, $I_{OL}=20mA$. This means our lowest resistor value could be $175\Omega$.
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24R_%7Bmin%7D%3D%5Cfrac%7BV_%7BCC%7D-V_%7BOL%7D%7D%7BI_%7BOL%7D%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+
+In our case, ![equation](http://www.sciweavers.org/tex2img.php?eq=%24V_%7BCC%7D%3D5V%24%2C%20%24V_%7BOL%7D%3D1.5V%24%2C%20%24I_%7BOL%7D%3D20mA%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0). This means our lowest resistor value could be ![equation](http://www.sciweavers.org/tex2img.php?eq=%24175%5COmega%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0).
 
 We also calculated the maximum, which we got using a guess for the parasitic capacitance of the bus which we estimated to be 1.889e-11 F. From there we can use the following equation:
 
-$$R_{max}=\frac{t_{r}}{0.8473*C_{b}}$$
+![equation](http://www.sciweavers.org/tex2img.php?eq=%24%24R_%7Bmax%7D%3D%5Cfrac%7Bt_%7Br%7D%7D%7B0.8473%2AC_%7Bb%7D%7D%24%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
-We'll assume the bus is operating in standard mode which means the maximum rise time should be 1000 nanoseconds. This gives us $62478.5347184\Omega$.
-Given this information, we'd like the bus to be syncing 1mA or less. Based on this, we'd like the minimum resistor value to be $3.5K\Omega$. For convenience, we'll use $4.7K\Omega$.
+We'll assume the bus is operating in standard mode which means the maximum rise time should be 1000 nanoseconds. This gives us ![equation](http://www.sciweavers.org/tex2img.php?eq=%2462478.5347184%5COmega%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0).
+Given this information, we'd like the bus to be syncing 1mA or less. Based on this, we'd like the minimum resistor value to be ![equation](http://www.sciweavers.org/tex2img.php?eq=%243.5K%5COmega%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0). For convenience, we'll use ![equation](http://www.sciweavers.org/tex2img.php?eq=%244.7K%5COmega%24&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0).
 The Arduino can sync a max of 20mA
 The Arduino recognizes a low signal on the bus if the voltage is below 1.5V
 
