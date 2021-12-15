@@ -1,7 +1,7 @@
 ---
 title: 'Mechanical Subsystem'
 description: Learn more about our scotch yoke system and crochet textile.
-image: './images/wall2.png'
+image: '../../images/textile.jpeg'
 ---
 ## Scotch Yokes
 We designed and manufactured 16 scotch yokes to translate the rotational motion from the server motors into linear motion
