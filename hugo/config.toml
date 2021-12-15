@@ -1,6 +1,6 @@
-baseURL = "."
+baseURL = "https://mmadanguit.github.io/art-attack/"
 languageCode = "en"
-title = "Hugo Ava Theme"
+title = "Tri Wall"
 theme = "hugo-themes-ava"
 paginate = 7
 mainSections = "post"
